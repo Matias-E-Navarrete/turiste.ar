@@ -1,14 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import { Navbar } from './components/Navbar/Navbar';
+import { ItemListContainer } from './containers/ItemListContainer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Turiste.ar</h1>
-        <p>Sitio en construcción</p>
-        <img src={logo} className="App-logo" alt="logo" width="25%" />
-      </header>
+        <Navbar />
+        <ItemListContainer greeting='Greeting' />
     </div>
   );
 }
