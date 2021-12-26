@@ -5,15 +5,15 @@
   background: linear-gradient(
     180deg,
     rgba(19, 49, 72, 1) 0%,
-    rgba(15, 37, 54, 1) 80%,
-    rgba(8, 21, 31, 1) 100%
+    rgb(18, 44, 65) 80%,
+    rgb(12, 32, 48) 100%
   );
   height: auto;
   width: 100%;
 }
 .navbar > .logo-img {
   margin-left: 1rem;
-  width: 5%;
+  width: 3%;
   height: auto;
 }
 .navbar > .navbar-list {
