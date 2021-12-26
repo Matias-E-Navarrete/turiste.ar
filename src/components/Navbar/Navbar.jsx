@@ -1,19 +1,19 @@
 import './Navbar.css';
 import React from 'react';
 import image from '../../assets/img/logos/logo-transparent.png';
-import { navbarRoutes } from '../../utils/navbarRoutes';
-
+import { Link } from '../Link/Link';
+import { navbarRoutes } from '../../utils/navbar.routes'
+import { CartWidget } from '../Widgets/Cart';
+import { UserProfileWidget } from '../Widgets/Users';
 export const Navbar = () => {
     return (
         <>
             <nav className='navbar'>
                 <img className='logo-img' src={image} alt="logotipo" />
                 <ul className='navbar-list' style={{ listStyle: 'none' }}>
-                    {navbarRoutes.map(menu =>
-                        menu.component !== null ?
-                            menu.component :
-                            <li> <a href={menu.link} >{menu.name}</a></li>
-                    )}
+                    {navbarRoutes.map((menu, key) => <Link key={key} route={menu.route} name={menu.name} />)}
+                    <CartWidget />
+                    <UserProfileWidget />
                 </ul>
             </nav>
         </>
