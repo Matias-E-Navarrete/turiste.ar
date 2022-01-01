@@ -1,0 +1,14 @@
+.loader{
+    margin-top: 10%;
+    margin-bottom: auto;    
+}
+
+.loader .center{
+    margin-left: 25%;
+    margin-right: auto;
+}
+
+.loader .center .loading-img{
+    height: auto;
+    width: 40%;
+}
