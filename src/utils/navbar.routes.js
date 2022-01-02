@@ -3,7 +3,7 @@ export const navbarRoutes = [
 
     {
         name: 'Inicio',
-        route: '/home',
+        route: '/',
         hasWidget: false,
         component: '',
         icon: null,
