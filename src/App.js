@@ -2,13 +2,13 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Navbar } from './components/Navbar/Navbar';
 import { EmptyComponent } from './components/EmptyComponent/EmptyComponent';
-import { navbarRoutes } from './utils/navbar.routes';
+import { routes } from './utils/routes.routes';
 
 function App() {
-  const getRoutes = (routes) => routes.map((navRoute) => {
-    return <Route exact path={navRoute.route}
+  const getRoutes = (routes) => routes.map((route, key) => {
+    return <Route key={key} exact path={route.route}
       element={
-        navRoute.page
+        route.page
       } />
   })
 
@@ -18,7 +18,7 @@ function App() {
         <Navbar />
         <Routes>
           {
-            getRoutes(navbarRoutes)
+            getRoutes(routes)
           }
           <Route exact path="/cart"
             element={<EmptyComponent />}
