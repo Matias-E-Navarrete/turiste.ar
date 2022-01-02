@@ -39,7 +39,7 @@
 .card .card-body .product-detail{
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: flex-end;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
