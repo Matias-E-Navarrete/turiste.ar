@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './ItemListContainer.css';
-import productData from '../../data/products.json'
-import { ItemList } from '../../components/ItemList/ItemList';
-import { Loading } from '../../components/Loading/Loading';
+import productData from '../../../data/products.json'
+import { ItemList } from '../../../components/ItemList/ItemList';
+import { Loading } from '../../../components/Loading/Loading';
 
 export const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([]);

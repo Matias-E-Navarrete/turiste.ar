@@ -2,7 +2,6 @@ import { Home } from '../pages/Home/Home'
 import { EmptyComponent } from '../components/EmptyComponent/EmptyComponent'
 
 export const navbarRoutes = [
-
     {
         name: 'Inicio',
         route: '/',

@@ -12,9 +12,9 @@
   height: auto;
   width: 100%;
 }
-.navbar > .logo-img {
+.logo-img {
   margin-left: 1rem;
-  width: 3%;
+  width: 15%;
   height: auto;
 }
 .navbar > .navbar-list {

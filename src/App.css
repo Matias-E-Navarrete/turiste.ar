@@ -2,3 +2,14 @@
   margin: 0;
   font-family: 'Poppins';
 }
+
+.container {
+  background: #fff;
+  color: #133148;
+  height: 100%;
+  margin: 0;
+  position: fixed;
+  padding: 0;
+  width: 100%;
+  margin-left: 0.5rem;
+}
