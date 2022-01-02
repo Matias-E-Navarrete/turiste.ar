@@ -22,8 +22,6 @@ export const ItemListContainer = ({ greeting }) => {
         }
     }, [loading])
 
-
-
     return (
         <div className="container">
             <div className="greeting">

@@ -1,3 +1,5 @@
+import { Home } from '../pages/Home/Home'
+import { EmptyComponent } from '../components/EmptyComponent/EmptyComponent'
 
 export const navbarRoutes = [
 
@@ -7,7 +9,8 @@ export const navbarRoutes = [
         hasWidget: false,
         component: '',
         icon: null,
-        visible: true
+        visible: true,
+        page: <Home />
     },
     {
         name: 'Paquetes',
@@ -15,7 +18,8 @@ export const navbarRoutes = [
         hasWidget: false,
         component: '',
         icon: null,
-        visible: true
+        visible: true,
+        page: <EmptyComponent />
     },
     {
         name: 'Favoritos',
@@ -23,6 +27,7 @@ export const navbarRoutes = [
         hasWidget: false,
         component: '',
         icon: null,
-        visible: true
+        visible: true,
+        page: <EmptyComponent />
     }
 ]
