@@ -5,16 +5,13 @@ import { EmptyComponent } from './components/EmptyComponent/EmptyComponent';
 import { navbarRoutes } from './utils/navbar.routes';
 
 function App() {
-  const getRoutes = (routes) => {
+  const getRoutes = (routes) => routes.map((navRoute) => {
+    return <Route exact path={navRoute.route}
+      element={
+        navRoute.page
+      } />
+  })
 
-    const routesMap = routes.map((navRoute) => {
-      return <Route exact path={navRoute.route}
-        element={
-          navRoute.page
-        } />
-    })
-    return routesMap
-  }
   return (
     <div className="App">
       <BrowserRouter>
