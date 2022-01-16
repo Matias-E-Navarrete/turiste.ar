@@ -1,7 +1,18 @@
-import React from 'react'
 import './ItemDetail.css'
+import React, { useContext } from 'react'
+import { CartContext } from '../../context/CartContext';
+import { ItemCount } from '../ItemCount/ItemCount';
+import { NavLink } from 'react-router-dom';
+
 export const ItemDetail = ({ id, title, description, price, pictureUrl }) => {
-    console.log('%cMyProject%cline:3%cpictureUrl', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(1, 77, 103);padding:3px;border-radius:2px', pictureUrl)
+    const { addItem, removeItem, clear, isInCart } = useContext(CartContext)
+    const item = {
+        id,
+        title,
+        description,
+        price,
+        pictureUrl
+    };
     return (
         <div className='detail'>
             <section className='detail-title'>
@@ -18,19 +29,25 @@ export const ItemDetail = ({ id, title, description, price, pictureUrl }) => {
                     <p>{description}</p>
                     <h5 className='detail-price'>{price}</h5>
                     <section className='detail-operations'>
-                        <form method='POST'>
-                            <div className='amount'>
-                                <label>Días</label>
-                                <input className='detail-count' type="number" />
+
+                        <div className='amount'>
+                            <label>Días</label>
+                            <input className='detail-count' type="number" />
+                        </div>
+                        <div className='detail-buttons'>
+                            <button className="buy" onClick={() => addItem(item)}> Comprar </button>
+                            <button className="add-cart" onClick={() => removeItem(item.id)}> Eliminar </button>
+                        </div>
+
+                        <NavLink to={`/cart`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                            <div className='cart-amount'>
+                                <ItemCount id={id} />
+                                <button className="btn-finish" type='submit'> Terminar Compra </button>
                             </div>
-                            <div className='detail-buttons'>
-                            <button className="buy" type='submit'> Comprar </button>
-                            <button className="add-cart" type='submit'> Añadir al carrito </button>
-                            </div>
-                        </form>
+                        </NavLink>
                     </section>
                 </section>
             </div>
-        </div>
+        </div >
     )
 }
