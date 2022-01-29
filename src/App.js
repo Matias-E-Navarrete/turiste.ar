@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar/Navbar';
 import { EmptyComponent } from './components/EmptyComponent/EmptyComponent';
 import { routes } from './utils/routes.routes';
 import { CartProvider } from './context/CartContext';
+import { Cart } from './components/Cart/Cart';
 
 function App() {
 
@@ -16,21 +17,21 @@ function App() {
 
   return (
     <CartProvider>
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            {
-              getRoutes(routes)
-            }
-            <Route exact path="/cart"
-              element={<EmptyComponent />}
-            />
-            <Route exact path="/user-profile"
-              element={<EmptyComponent />}
-            />
-          </Routes>
-        </BrowserRouter>
-    </CartProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+
+          {getRoutes(routes)}
+
+          <Route exact path="/cart"
+            element={<Cart />}
+          />
+          <Route exact path="/user-profile"
+            element={<EmptyComponent />}
+          />
+        </Routes>
+      </BrowserRouter >
+    </CartProvider >
   );
 }
 

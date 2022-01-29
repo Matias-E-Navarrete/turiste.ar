@@ -6,6 +6,7 @@ import { navbarRoutes } from '../../utils/navbar.routes'
 import { CartWidget } from '../Widgets/Cart';
 import { UserProfileWidget } from '../Widgets/Users';
 import { NavLink } from 'react-router-dom';
+
 export const Navbar = () => {
     return (
         <>

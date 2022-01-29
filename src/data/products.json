@@ -3,28 +3,28 @@
         "id": "1",
         "title": "Potrerillos",
         "description": "Viaje a Potrerillos incluye: 1 día en cabaña, rafting para 4 personas, caminata por la montaña y almuerzo y cena en restaurante",
-        "price": "$600",
+        "price": 600,
         "pictureUrl": "img/products/tunel-potrerillos.jpg"
     },
     {
         "id": "2",
         "title": "Bodega Salentein",
         "description": "Viaje a bodega Salentein incluye: 1 degustación de los vinos de primera línea, caminata por la bodega y almuerzo en el restaurante",
-        "price": "$150",
+        "price": 150,
         "pictureUrl": "img/products/salentein.jpg"
     },
     {
         "id": "3",
         "title": "Sky Las leñas",
         "description": "Viaje a Las Leñas incluye: 1 día en cabaña, sky para 2 personas, caminata por la montaña y almuerzo y cena en hotel",
-        "price": "$800",
+        "price": 800,
         "pictureUrl": "img/products/las-leñas.jpg"
     },
     {
         "id": "4",
         "title": "Camino del Vino",
         "description": "Viaje por el camino del vino incluye: degustación de los mejores vinos de cada bodega",
-        "price": "$200",
+        "price": 200,
         "pictureUrl": "img/products/bodega.jpg"
     }
 ]

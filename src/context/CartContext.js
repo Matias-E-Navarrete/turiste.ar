@@ -18,8 +18,15 @@ export const CartProvider = ({ children }) => {
     }
 
     const removeItem = (id) => {
-        const newCart = cart.filter(i => i.item.id !== id);
-        setCart(newCart);
+        const elementFound = cart.find(i => i.item.id === id);
+        if (elementFound) {
+            if (elementFound.quantity > 1) {
+                elementFound.quantity--;
+                setCart([...cart])
+            } else {
+                setCart(cart.filter(item => item.item.id !== id));
+            }
+        }
         return cart;
     }
 

@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './ItemList.css'
 import { ItemComponent } from '../Item/Item'
+import { CartContext } from '../../context/CartContext'
 
 export const ItemList = ({products}) => {
+    const { cart } = useContext(CartContext)
     const renderItems = () => {
         return products.map((item, key) => <ItemComponent key={key} {...item} />)
     }
