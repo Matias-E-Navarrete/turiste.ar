@@ -57,5 +57,14 @@ export const routes = [
         icon: null,
         visible: true,
         page: <EmptyComponent />
-    }
+    },
+    // {
+    //     name: 'Carrito',
+    //     route: '/cart',
+    //     hasWidget: false,
+    //     component: '',
+    //     icon: null,
+    //     visible: true,
+    //     page: <CartProvider> <Cart /></CartProvider>
+    // }
 ]

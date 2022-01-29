@@ -3,21 +3,21 @@ import './ItemListContainer.css';
 import productData from '../../../data/products.json'
 import { ItemList } from '../../../components/ItemList/ItemList';
 import { Loading } from '../../../components/Loading/Loading';
+import { getFirestore } from '../../../firebase/config';
 
 export const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
+
     useEffect(() => {
         if (loading) {
-            new Promise((res, rej) => {
-                setTimeout(() => {
-                    const productsArray = productData.length > 0 ? productData : []
-                    setLoading(!loading);
-                    res(productsArray)
-                }, 2000)
-            }).then((res) => {
-                setProducts(res);
+            const db = getFirestore();
+            const itemsCollection = db.collection('items')
+            itemsCollection.get().then(value => {
+                setLoading(!loading);
+                const items = value.docs.map((e,key) => { return { ...e.data(), id: e.id } })
+                setProducts([...items]);
             })
         }
     }, [loading])

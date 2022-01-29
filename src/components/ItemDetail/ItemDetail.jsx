@@ -5,7 +5,7 @@ import { ItemCount } from '../ItemCount/ItemCount';
 import { NavLink } from 'react-router-dom';
 
 export const ItemDetail = ({ id, title, description, price, pictureUrl }) => {
-    const { addItem, removeItem, clear, isInCart } = useContext(CartContext)
+    const { addItem, removeItem, clear } = useContext(CartContext)
     const item = {
         id,
         title,
@@ -29,22 +29,19 @@ export const ItemDetail = ({ id, title, description, price, pictureUrl }) => {
                     <p>{description}</p>
                     <h5 className='detail-price'>{price}</h5>
                     <section className='detail-operations'>
-
-                        <div className='amount'>
-                            <label>Días</label>
-                            <input className='detail-count' type="number" />
-                        </div>
                         <div className='detail-buttons'>
                             <button className="buy" onClick={() => addItem(item)}> Comprar </button>
                             <button className="add-cart" onClick={() => removeItem(item.id)}> Eliminar </button>
                         </div>
-
-                        <NavLink to={`/cart`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                            <div className='cart-amount'>
-                                <ItemCount id={id} />
+                        <div className='cart-amount'>
+                            <ItemCount id={id} />
+                            <NavLink to={`/cart`} style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <button className="btn-finish" type='submit'> Terminar Compra </button>
-                            </div>
-                        </NavLink>
+                            </NavLink>
+                        </div>
+                        <div className='detail-buttons'>
+                            <button className="clear-cart" onClick={() => clear()}> Vaciar Carrito </button>
+                        </div>
                     </section>
                 </section>
             </div>

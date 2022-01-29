@@ -5,6 +5,7 @@ import productData from '../../../data/products.json'
 import { Loading } from '../../../components/Loading/Loading'
 import { findByID } from '../../../utils/functions'
 import { ItemDetail } from '../../../components/ItemDetail/ItemDetail'
+import { getFirestore } from '../../../firebase/config'
 
 export const ItemDetailContainer = () => {
     const { id } = useParams()
@@ -15,15 +16,16 @@ export const ItemDetailContainer = () => {
 
     useEffect(() => {
         if (loading) {
-            new Promise((res, rej) => {
-                setTimeout(() => {
-                    const productDetail = productData.length > 0 ? getItem() : null
+
+            const db = getFirestore();
+            const itemsCollection = db.collection('items');
+            itemsCollection.get()
+                .then(value => {
+                    const items = value.docs.map((e, key) => { return { ...e.data(), id: e.id } })
+                    const item = items.find(e => e.id === id)
+                    setProduct(item)
                     setLoading(!loading);
-                    res(productDetail)
-                }, 2000)
-            }).then((res) => {
-                setProduct(res);
-            })
+                })
         }
     }, [loading, id])
     return (
