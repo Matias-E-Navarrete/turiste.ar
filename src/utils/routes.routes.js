@@ -2,6 +2,8 @@ import { Home } from '../pages/Home/Home'
 import { EmptyComponent } from '../components/EmptyComponent/EmptyComponent'
 import { ItemDetailContainer } from '../containers/Item/Detail/ItemDetailContainer'
 import { ItemListContainer } from '../containers/Item/List/ItemListContainer'
+import { PaymentMethod } from '../components/Payments/PaymentMethod'
+import { Checkout } from '../components/Checkout/Checkout'
 
 export const routes = [
     {
@@ -58,13 +60,22 @@ export const routes = [
         visible: true,
         page: <EmptyComponent />
     },
-    // {
-    //     name: 'Carrito',
-    //     route: '/cart',
-    //     hasWidget: false,
-    //     component: '',
-    //     icon: null,
-    //     visible: true,
-    //     page: <CartProvider> <Cart /></CartProvider>
-    // }
+    {
+        name: 'Metodo de pago',
+        route: '/payment',
+        hasWidget: false,
+        component: '',
+        icon: null,
+        visible: true,
+        page: <PaymentMethod />
+    },
+    {
+        name: 'Compra',
+        route: '/checkout',
+        hasWidget: false,
+        component: '',
+        icon: null,
+        visible: true,
+        page: <Checkout />
+    }
 ]

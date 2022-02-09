@@ -19,8 +19,8 @@ export const Cart = () => {
     const getCartItems = () => {
         const getTotalItem = (price, quantity) => price * quantity;
         return cart.map((element, key) =>
-            <>
-                <section className='cart-item'>
+            <div key={key}>
+                <section key={key}  className='cart-item'>
                     <img src={element.item.pictureUrl} alt="Imagen " />
                     <hr />
                     <section className='cart-detail'>
@@ -35,7 +35,7 @@ export const Cart = () => {
                     <p className='item-price'>$ {getTotalItem(element.item.price, element.quantity)}</p>
                 </section>
                 <hr className='divider' />
-            </>
+            </div>
         )
 
     }
@@ -70,7 +70,9 @@ export const Cart = () => {
                         <p className='item-price'>Total: $ {getTotalPrice()} </p>
                     </section>
                     <section className='cart-payment'>
-                        <button className="payment" disabled={cart.length === 0 ? true : false}> PAGAR </button>
+                        <NavLink to={`/payment`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                            <button className="payment" disabled={cart.length === 0 ? true : false}> PAGAR </button>
+                        </NavLink>
                     </section>
                 </section>
             </section>

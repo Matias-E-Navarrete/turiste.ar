@@ -7,8 +7,7 @@ export const CartWidget = ({ route = '/cart' }) => {
     const getTotal = () => {
         let total = 0;
         if (cart.length > 0)
-            cart.forEach((element, key) => total += element.quantity);
-
+            cart.forEach((element) => total += element.quantity);
         return total;
     }
 
@@ -16,7 +15,7 @@ export const CartWidget = ({ route = '/cart' }) => {
         const getTotalItem = (price, quantity) => price * quantity;
         return cart.map((element, key) => {
             return (
-                <>
+                <div key={key}>
                     <section className='cart-item'>
                         <h4>{element.item.title}</h4>
                         <hr />
@@ -30,7 +29,7 @@ export const CartWidget = ({ route = '/cart' }) => {
                     </section>
                     <br />
                     <hr className='divider' />
-                </>
+                </div>
             )
         })
     }
